@@ -92,6 +92,30 @@ class Instructor extends Person {
   * `sprintChallenge` similar to PRAssignment but logs out `student.name has begun sprint challenge on {subject}`
 */
 
+class Student extends Person {
+    constructor(previousBackground, className, favSubjects) {
+      super();
+  
+      this.previousBackground = previousBackground;
+      this.className = className;
+      this.favSubjects = favSubjects;
+    }
+  
+    listsSubjects() {
+      this.favSubjects.forEach(function(element) {
+        console.log(element)
+        });
+    }
+  
+    PRAassignment(subject) {
+      console.log(`${student.name} has submitted a PR for ${subject}`);
+    }
+  
+    sprintChallenge(subject) {
+      console.log(`${student.name} has begun sprint challenge on ${subject}`);
+    }
+  }
+
 /*
 #### Project Manager
 
