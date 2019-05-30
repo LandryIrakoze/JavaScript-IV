@@ -82,6 +82,11 @@ class Person {
     grade(student, subject) {
       console.log(`${student.name} receives a perfect score on ${subject}`);
     }
+
+    checkAssignments(student) {
+      student.grade += Math.floor(Math.random() * 11);
+      console.log(`${student.name}'s new grade is ${student.grade}`);
+    }
   }
   
   const alice = new Instructor({
@@ -118,6 +123,7 @@ class Person {
       this.previousBackground = attributes.previousBackground;
       this.className = attributes.className;
       this.favSubjects = attributes.favSubjects;
+      this.grade = attributes.grade;
     }
   
     listsSubjects() {
@@ -133,6 +139,14 @@ class Person {
     sprintChallenge(subject) {
       console.log(`${this.name} has begun sprint challenge on ${subject}`);
     }
+
+    graduate() {
+        if (this.grade > 70) {
+            return true;
+        } else {
+            return false;
+        }
+    }
   }
   
   const eve = new Student({
@@ -147,6 +161,7 @@ class Person {
     previousBackground: "Researcher",
     className: "Web Development 101",
     favSubjects: ["Mathematics", "Physics", "Computer Science"],
+    grade: 96,
   });
   
   eve.listsSubjects();
@@ -186,7 +201,7 @@ class Person {
   }
   
   const ada = new ProjectManager({
-    name: "ada", 
+    name: "Ada", 
     age: "28", 
     location: "San Francisco",
     
@@ -204,7 +219,8 @@ class Person {
   
   ada.standUp("Webpt7");
   ada.debugsCode(eve, "Vue");
-  
+  ada.checkAssignments(eve);
+
   /*
   #### Stretch Problem
   
