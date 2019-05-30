@@ -45,6 +45,13 @@ class Person {
     }
   }
   
+  const bob = new Person({
+    name: "Bob", 
+    age: "31", 
+    location: "Portland"
+    });
+  bob.speak();
+  
   /*
   #### Instructor
   
@@ -73,9 +80,21 @@ class Person {
     }
   
     grade(student, subject) {
-      console.log(`${student} receives a perfect score on ${subject}`);
+      console.log(`${student.name} receives a perfect score on ${subject}`);
     }
   }
+  
+  const alice = new Instructor({
+    name: "Alice", 
+    age: "26", 
+    location: "Boston",
+  
+    specialty: "Cryptography",
+    favLanguage: "Haskell",
+    catchPhrase: "Catch ya on the flip side"
+    });
+  
+  alice.demo("programming correctness");
   
   /*
   #### Student
@@ -108,13 +127,33 @@ class Person {
     }
   
     PRAassignment(subject) {
-      console.log(`${student.name} has submitted a PR for ${subject}`);
+      console.log(`${this.name} has submitted a PR for ${subject}`);
     }
   
     sprintChallenge(subject) {
-      console.log(`${student.name} has begun sprint challenge on ${subject}`);
+      console.log(`${this.name} has begun sprint challenge on ${subject}`);
     }
   }
+  
+  const eve = new Student({
+    name: "Eve", 
+    age: "31", 
+    location: "Montreal",
+    
+    specialty: "Embedded Systems",
+    favLanguage: "C++",
+    catchPhrase: "Just do it",
+  
+    previousBackground: "Researcher",
+    className: "Web Development 101",
+    favSubjects: ["Mathematics", "Physics", "Computer Science"],
+  });
+  
+  eve.listsSubjects();
+  eve.PRAassignment("serverless deployment");
+  eve.sprintChallenge("React");
+  
+  alice.grade(eve, "Cyber Security")
   
   /*
   #### Project Manager
@@ -141,10 +180,30 @@ class Person {
       console.log(`${this.name} announces to ${channel}, @channel standy times!`);
     }
   
-    debugsCode(student) {
+    debugsCode(student, subject) {
       console.log(`${this.name} debugs ${student.name}'s code on ${subject}'`);
     }
   }
+  
+  const ada = new ProjectManager({
+    name: "ada", 
+    age: "28", 
+    location: "San Francisco",
+    
+    specialty: "Distributed Computing",
+    favLanguage: "Rust",
+    catchPhrase: "Lets make the world a better place",
+  
+    previousBackground: "CTO",
+    className: "Web Dev",
+    favSubjects: ["Robotics", "Circuit Design", "Controls"],
+  
+    gradClassName: "CS1",
+    favInstructor: "Carol",
+  });
+  
+  ada.standUp("Webpt7");
+  ada.debugsCode(eve, "Vue");
   
   /*
   #### Stretch Problem
@@ -155,3 +214,4 @@ class Person {
     * This method, when called, will check the grade of the student and see if they're ready to graduate from Lambda School
     * If the student's grade is above a 70% let them graduate! Otherwise go back to grading their assignments to increase their score.
   */
+  
