@@ -73,7 +73,7 @@ class Person {
     }
   
     grade(student, subject) {
-      console.log(`${student.name} receives a perfect score on ${subject}`);
+      console.log(`${student} receives a perfect score on ${subject}`);
     }
   }
   
@@ -129,7 +129,7 @@ class Person {
     * `debugsCode` a method that takes in a student object and a subject and logs out `{name} debugs {student.name}'s code on {subject}`
   */
   
-  class ProjectManagers extends Instructor {
+  class ProjectManager extends Instructor {
     constructor(attributes) {
       super(attributes);
   
